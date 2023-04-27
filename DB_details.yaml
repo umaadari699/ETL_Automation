@@ -1,0 +1,18 @@
+
+# YAML Document starts with ---
+# Comments start with #
+
+Db_conn:
+#     path: r'C:\Users\uma.adari\PycharmProjects\pythonProject4\DbAutomation'
+     Username: 'SYS'
+     Password: 'Admin'
+     localHost: 'localhost/xe'
+     os.environ['PATH'] :  C:\\oraclexe\\app\oracle\\instantclient_21_9
+     #con : cx_Oracle.connect(Username, Password,localHost ,cx_Oracle.SYSDBA)
+UAT_DBconn:
+     Username: 'SYS'
+     Password: 'Admin'
+     localHost: 'localhost/xe'
+     os.environ['PATH']: C:\\oraclexe\\app\oracle\\instantclient_21_9
+
+...
