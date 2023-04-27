@@ -1,0 +1,21 @@
+
+# YAML Document starts with ---
+# Comments start with #
+
+File:
+    path: C:\Users\uma.adari\Downloads
+    SOURCE1 : \sheet1_2023-02-19.csv
+    SOURCE2 : \sheet2_2023-02-19.csv
+    TARGET : \Emp_Table.csv
+
+Query:
+
+  Src_qry: ""
+  Tgt_qry: ""
+
+Column_mapping:
+
+Primary_key:
+
+Casting_columns:
+...
