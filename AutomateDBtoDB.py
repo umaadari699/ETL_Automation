@@ -23,16 +23,17 @@ def step_readyaml(self,Query_yaml):
 
 # print(db_data['Db_conn']['Username']) # read username key value
 @then("get Record count{DB}")
-def step_connect(self, DB):
-    self.a = self
+def step_connect(self, DB,src,tgt):
     self.DB=DB
+    self.src=src
+    self.tgt=tgt
     os.environ['PATH'] = "C:\\oraclexe\\app\oracle\\instantclient_21_9"
     self.db_conn = cx_Oracle.connect(self.db_data[self.DB]['Username'], self.db_data[self.DB]['Password'],
                                      self.db_data[self.DB]['localHost'], cx_Oracle.SYSDBA)
     # db_conn=self.db_conn
     df_scount = pd.read_sql(self.db_qry['Query']['S_count'], self.db_conn)
     df_Tcount = pd.read_sql(self.db_qry['Query']['T_count'], self.db_conn)
-    with pd.ExcelWriter(today_dt + "_countofrec.xlsx", mode="w") as writer:
+    with pd.ExcelWriter(today_dt +self.src+'_'+self.tgt+ "_countofrec.xlsx", mode="w") as writer:
         df_scount.to_excel(writer, sheet_name="SCountOf Recs", index=True)
         df_Tcount.to_excel(writer, sheet_name="TCountOf Recs", index=True)
 @When("get Primary column Nulls")
